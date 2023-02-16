@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:CompileBindings="True">
+
+  <!-- Based on https://github.com/AvaloniaUI/Avalonia/blob/master/src/Avalonia.Themes.Fluent/Controls/AutoCompleteBox.xaml#L49 -->
+  <ControlTheme x:Key="{x:Type AutoCompleteBox}" TargetType="AutoCompleteBox">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Name="PART_LayoutRoot">
+          <TextBox Name="PART_TextBox" />
+          <!-- MinWidth binding should properly resolve type from the template parent (AutoCompleteBox) -->
+          <Popup Name="PART_Popup" 
+                 MinWidth="{Binding Bounds.Width, RelativeSource={RelativeSource TemplatedParent}}">
+            <Border Name="PART_SuggestionsContainer" >
+              <ListBox Name="PART_SelectingItemsControl" />
+            </Border>
+          </Popup>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+</ResourceDictionary>
