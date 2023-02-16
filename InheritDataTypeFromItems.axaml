@@ -1,0 +1,27 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:riderXamlRepros="clr-namespace:RiderXamlRepros"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RiderXamlRepros.InheritDataTypeFromItems"
+             x:DataType="riderXamlRepros:InheritDataTypeFromItems"
+             x:CompileBindings="True">
+  <DataGrid Items="{Binding Items}">
+    <DataGrid.Columns>
+      <!-- DataGridTextColumn.Binding has InheritDataTypeFromItems attribute on it defined as 
+      [InheritDataTypeFromItems(nameof(DataGrid.Items), AncestorType = typeof(DataGrid))]
+      which tells, that datatype should be resolved from ancestor of type DataGrid and its Items property items -->
+      <DataGridTextColumn Binding="{Binding Text}" />
+      <DataGridTemplateColumn>
+        <!-- Same about CellTemplate
+        [InheritDataTypeFromItems(nameof(DataGrid.Items), AncestorType = typeof(DataGrid))] -->
+        <DataGridTemplateColumn.CellTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Text}" />
+          </DataTemplate>
+        </DataGridTemplateColumn.CellTemplate>
+      </DataGridTemplateColumn>
+    </DataGrid.Columns>
+  </DataGrid>
+</UserControl>

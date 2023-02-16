@@ -9,10 +9,6 @@ public partial class CompiledBindingProjectWide : UserControl
     public CompiledBindingProjectWide()
     {
         InitializeComponent();
-    }
-
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
+        DataContext = this;
     }
 }
