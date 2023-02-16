@@ -1,0 +1,17 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style Selector="ListBox">
+    <Setter Property="ItemContainerTheme">
+      <ControlTheme TargetType="ListBoxItem">
+        <Setter Property="Template">
+          <ControlTemplate>
+            <ContentPresenter Name="PART_ContentPresenter" />
+          </ControlTemplate>
+        </Setter>
+        <Style Selector="^:pointerover /template/ Border#LayoutRoot">
+          <Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumBrush}" />
+        </Style>
+      </ControlTheme>
+    </Setter>
+  </Style>
+</Styles>
