@@ -1,0 +1,12 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:riderXamlRepros="clr-namespace:RiderXamlRepros"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RiderXamlRepros.CompiledBindingProjectWide"
+             x:DataType="riderXamlRepros:CompiledBindingProjectWide">
+  <!-- DataType information is available here, but Text binding doesn't hints about this information -->
+  <!-- Note, that AvaloniaUseCompiledBindingsByDefault is set to true in "csproj" which makes all bindings a compiled by default. -->
+  <TextBox Text="{Binding DataContext}" />
+</UserControl>
