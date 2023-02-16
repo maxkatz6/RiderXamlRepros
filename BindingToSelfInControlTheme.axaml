@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Based on https://github.com/AvaloniaUI/Avalonia/blob/6aac767a83fd8482ae1f22aa9d1ed6c7af54de09/src/Avalonia.Themes.Fluent/Controls/TextBox.xaml#L35 -->
+  <ControlTheme x:Key="FluentTextBoxButton" TargetType="Button">
+    <Setter Property="Width" Value="{CompiledBinding $self.Bounds.Height}"/>
+  </ControlTheme>
+</ResourceDictionary>
