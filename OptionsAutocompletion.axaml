@@ -1,0 +1,18 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="RiderXamlRepros.OptionsAutocompletion">
+  <Button>
+    <Button.IsVisible>
+      <OnPlatform Linux="False">
+        <!-- Options array should have autocompletion based on OnPlatformExtension properties with [MarkupExtensionDefaultOption] attribute -->
+        <!-- Note, it's possible to implement custom markup extensions that have MarkupExtensionDefaultOption properties. -->
+        <!-- All of these custom markup extensions also must have ShouldProvideOptionInternal method (unrelated to the XAML editor). -->
+        <!-- See https://github.com/AvaloniaUI/Avalonia/pull/7812 for more details and tests https://github.com/AvaloniaUI/Avalonia/blob/master/tests/Avalonia.Markup.Xaml.UnitTests/MarkupExtensions/OptionsMarkupExtensionTests.cs-->
+        <On Options="Windows, macOS" Content="True" />
+      </OnPlatform>
+    </Button.IsVisible>
+  </Button>
+</UserControl>
