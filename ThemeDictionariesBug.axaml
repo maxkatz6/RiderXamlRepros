@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!-- Rider somehow understands that SystemAccentColorLight1 exists -->
+  <StaticResource x:Key="AccentButtonBackgroundPointerOver1" ResourceKey="SystemAccentColorLight1" />
+  <!-- There is a warning for the non existent resource ClientAccentColorLight1 -->
+  <StaticResource x:Key="AccentButtonBackgroundPointerOver2" ResourceKey="ClientAccentColorLight1" />
+
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <!-- But if resource is referenced from the ThemeDictionaries, Rider shows an error as resource wasn't found -->
+      <StaticResource x:Key="AccentButtonBackgroundPressed1" ResourceKey="SystemAccentColorLight1" />
+      <!-- Still, for non existent resource there is no errors, just a warning -->
+      <StaticResource x:Key="AccentButtonBackgroundPressed2" ResourceKey="ClientAccentColorLight1" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+</ResourceDictionary>
